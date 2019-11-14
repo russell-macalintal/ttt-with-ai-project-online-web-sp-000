@@ -14,27 +14,37 @@ class Game
   end
 
   def won?
-
+    WIN_COMBINATIONS.detect { |win_combo| win_combo.all? { |c_ind| self.board.cells[c_ind] == "X"} || win_combo.all? { |c_ind| self.board.cells[c_ind] == "O"}}
   end
 
   def draw?
-
+    self.board.full? && !self.won?
   end
 
   def over?
-
+    self.won? || self.draw?
   end
 
   def winner
-
+    self.won? ? self.board.cells[self.won?[0]] : nil
   end
 
   def turn
-
+    input = self.current_player.move(self.board)
+    if self.board.valid_move?(input)
+      self.board.update(input, self.current_player)
+    else
+      self.turn
+    end
   end
 
   def play
-
+    self.turn until self.over?
+    if self.won?
+      puts "Congratulations #{self.winner}!"
+    else
+      puts "Cat's Game!"
+    end
   end
 
 

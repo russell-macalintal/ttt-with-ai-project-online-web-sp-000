@@ -39,9 +39,7 @@ class Board
   end
 
   def update(input, player)
-    if valid_move?(input)
-      self.cells[input.to_i - 1] = player.token
-    end
+    self.cells[input.to_i - 1] = player.token
   end
 
 end
