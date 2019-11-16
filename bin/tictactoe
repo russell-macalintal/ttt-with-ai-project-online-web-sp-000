@@ -18,7 +18,7 @@ def start_game
   else
     case g_select
     when "1"
-      Game.new(Players::Computer.new("X"), Players::Computer.new("O"))
+      game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"))
     when "2"
       puts "Would you like to go first? (Y/N):"
       p_select = gets.strip
