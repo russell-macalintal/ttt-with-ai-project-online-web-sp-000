@@ -4,6 +4,7 @@ module Players
 
     def move(board)
       puts "Computer's move:"
+      sleep(1)
       input = self.computer_move(board)
     end
 
