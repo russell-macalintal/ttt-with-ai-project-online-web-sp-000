@@ -12,7 +12,7 @@ module Players
       if board.valid_move?(trial)
         input = trial
       else
-        computer_move
+        computer_move(board)
       end
     end
 
