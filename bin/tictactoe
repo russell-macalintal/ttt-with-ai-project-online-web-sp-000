@@ -33,6 +33,7 @@ def start_game
       return
     end
   end
+  game.play
 end
 
 start_game
