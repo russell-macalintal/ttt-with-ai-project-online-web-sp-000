@@ -23,12 +23,12 @@ def start_game
       puts "Would you like to go first? (Y/N):"
       p_select = gets.strip
       if p_select == "y"
-        Game.new(Players::Human.new("X"), Players::Computer.new("O"))
+        game = Game.new(Players::Human.new("X"), Players::Computer.new("O"))
       elsif p_select == "n"
-        Game.new(Players::Computer.new("X"), Players::Human.new("O"))
+        game = Game.new(Players::Computer.new("X"), Players::Human.new("O"))
       end
     when "3"
-      Game.new(Players::Human.new("X"), Players::Human.new("O"))
+      game = Game.new(Players::Human.new("X"), Players::Human.new("O"))
     when "4"
       return
     end
