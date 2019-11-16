@@ -30,10 +30,11 @@ class Game
   end
 
   def turn
+    self.board.display
     input = self.current_player.move(self.board)
     if self.board.valid_move?(input)
       self.board.update(input, self.current_player)
-      self.board.display
+      # self.board.display
     else
       self.turn
     end
