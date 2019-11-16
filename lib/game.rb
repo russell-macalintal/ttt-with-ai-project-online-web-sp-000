@@ -33,6 +33,7 @@ class Game
     input = self.current_player.move(self.board)
     if self.board.valid_move?(input)
       self.board.update(input, self.current_player)
+      self.board.display
     else
       self.turn
     end
